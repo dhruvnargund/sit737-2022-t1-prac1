@@ -40,8 +40,17 @@ app.post('/test', function (request, response) {
     response.send('Thank you for requesting our Post Service')
 })
 
+// app.post("/add", function (req, res) {
+//     console.log(req.body);
+//     var num1, num2, total = 0;
+//     num1 = +req.body.num1;
+//     num2 = +req.body.num2;
+//     total = num1 + num2;
+//     console.log(total);
+//     res.send("The result of the calculation is " + total);
+// });
 
-app.post("/add", function (req, res) {
+app.get("/add", function (req, res) {
     console.log(req.body);
     var num1, num2, total = 0;
     num1 = +req.body.num1;
@@ -51,12 +60,32 @@ app.post("/add", function (req, res) {
     res.send("The result of the calculation is " + total);
 });
 
-app.get("/add", function (req, res) {
+app.get("/sub", function (req, res) {
     console.log(req.body);
     var num1, num2, total = 0;
     num1 = +req.body.num1;
     num2 = +req.body.num2;
-    total = num1 + num2;
+    total = num1 - num2;
+    console.log(total);
+    res.send("The result of the calculation is " + total);
+});
+
+app.get("/mul", function (req, res) {
+    console.log(req.body);
+    var num1, num2, total = 0;
+    num1 = +req.body.num1;
+    num2 = +req.body.num2;
+    total = num1 * num2;
+    console.log(total);
+    res.send("The result of the calculation is " + total);
+});
+
+app.get("/div", function (req, res) {
+    console.log(req.body);
+    var num1, num2, total = 0;
+    num1 = +req.body.num1;
+    num2 = +req.body.num2;
+    total = num1 / num2;
     console.log(total);
     res.send("The result of the calculation is " + total);
 });
