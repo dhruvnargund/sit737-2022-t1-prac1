@@ -90,6 +90,34 @@ app.get("/div", function (req, res) {
     res.send("The result of the calculation is " + total);
 });
 
+app.get("/calc", function (req, res) {
+    console.log(req.body);
+    let num1, num2, total,
+        operation;
+    num1 = +req.body.num1;
+    num2 = +req.body.num2;
+    operation = +req.body.operation;
+    switch (operation) {
+        case "+":
+            total = n1 + n2;
+            break;
+        case "-":
+            total = n1 - n2;
+            break;
+        case "*":
+            total = n1 * n2;
+            break;
+        case "/":
+            total = n1 / n2;
+            break;
+        default:
+            break;
+    }
+    console.log(total);
+    res.send("The result of the calculation is " + total);
+});
+
+
 // app.post("/add", function (req, res) {
 
 //     let num1, num2, total = 0;
